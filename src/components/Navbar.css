@@ -1,0 +1,9 @@
+.navbar-fixed{
+  position: fixed;
+  bottom: 0
+}
+
+.nav-center ul{
+  display: flex;
+  justify-content: center;
+}
