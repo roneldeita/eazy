@@ -46,6 +46,11 @@ registerRoute(
     if (url.pathname.match(fileExtensionRegexp)) {
       return false;
     }
+    
+    // If this is a URL for a serverless function, skip
+    if (url.pathname.startsWith("/.netlify/functions")) {
+      return false;
+    }
 
     // Return true to signal that we want to use the handler.
     return true;
