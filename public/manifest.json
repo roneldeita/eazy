@@ -65,5 +65,5 @@
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "orientation": "portrait-primary",
-  "prefer_related_applications":true
+  "prefer_related_applications":false
 }
