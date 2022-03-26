@@ -5,8 +5,17 @@ import RoutesTree from './components/RoutesTree';
 const App = () => {
   
   useEffect(()=>{
+    
     let deferredPrompt:any;
     const buttonInstall:any = document.querySelector('.btn');
+    
+    console.log(window.navigator.userAgent)
+    const ua = window.navigator.userAgent;
+    const isIPad = !!ua.match(/iPad/i);
+    const isIPhone = !!ua.match(/iPhone/i);
+
+    console.log(isIPad, isIPhone)
+  
     
     window.addEventListener('beforeinstallprompt', (e) => {
       // Prevent the mini-infobar from appearing on mobile
@@ -15,6 +24,7 @@ const App = () => {
       deferredPrompt = e;
       // Update UI notify the user they can install the PWA
       buttonInstall.style.display = 'block';
+
       //showInstallPromotion();
       // Optionally, send analytics event that PWA install promo was shown.
       console.log(`'beforeinstallprompt' event was fired.`);
