@@ -1,7 +1,7 @@
 {
-  "short_name": "Eazy App",
+  "short_name": "EazyApp",
   "lang": "en-US",
-  "name": "Eazy",
+  "name": "Eazy App",
   "description": "Eazy PWA", 
   "icons": [
     {
@@ -60,10 +60,9 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "orientation": "portrait-primary",
-  "prefer_related_applications":false
+  "orientation": "portrait-primary"
 }
