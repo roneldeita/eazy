@@ -4,59 +4,59 @@ import RoutesTree from './components/RoutesTree';
 
 const App = () => {
   
-  useEffect(()=>{
+  // useEffect(()=>{
     
-    let deferredPrompt:any;
-    const buttonInstall:any = document.querySelector('.btn');
+  //   let deferredPrompt:any;
+  //   const buttonInstall:any = document.querySelector('.btn');
     
-    console.log(window.navigator.userAgent)
-    const ua = window.navigator.userAgent;
-    const isIPad = !!ua.match(/iPad/i);
-    const isIPhone = !!ua.match(/iPhone/i);
+  //   console.log(window.navigator.userAgent)
+  //   const ua = window.navigator.userAgent;
+  //   const isIPad = !!ua.match(/iPad/i);
+  //   const isIPhone = !!ua.match(/iPhone/i);
 
-    console.log(isIPad, isIPhone)
+  //   console.log(isIPad, isIPhone)
   
     
-    window.addEventListener('beforeinstallprompt', (e) => {
-      // Prevent the mini-infobar from appearing on mobile
-      e.preventDefault();
-      // Stash the event so it can be triggered later.
-      deferredPrompt = e;
-      // Update UI notify the user they can install the PWA
-      buttonInstall.style.display = 'block';
+  //   window.addEventListener('beforeinstallprompt', (e) => {
+  //     // Prevent the mini-infobar from appearing on mobile
+  //     e.preventDefault();
+  //     // Stash the event so it can be triggered later.
+  //     deferredPrompt = e;
+  //     // Update UI notify the user they can install the PWA
+  //     buttonInstall.style.display = 'block';
 
-      //showInstallPromotion();
-      // Optionally, send analytics event that PWA install promo was shown.
-      console.log(`'beforeinstallprompt' event was fired.`);
-    });
+  //     //showInstallPromotion();
+  //     // Optionally, send analytics event that PWA install promo was shown.
+  //     console.log(`'beforeinstallprompt' event was fired.`);
+  //   });
     
-    buttonInstall.addEventListener('click', async () => {
-      // Hide the app provided install promotion
-     // hideInstallPromotion();
-     buttonInstall.style.display = 'none';
-      // Show the install prompt
-      deferredPrompt.prompt();
-      // Wait for the user to respond to the prompt
-      const { outcome } = await deferredPrompt.userChoice;
+  //   buttonInstall.addEventListener('click', async () => {
+  //     // Hide the app provided install promotion
+  //    // hideInstallPromotion();
+  //    buttonInstall.style.display = 'none';
+  //     // Show the install prompt
+  //     deferredPrompt.prompt();
+  //     // Wait for the user to respond to the prompt
+  //     const { outcome } = await deferredPrompt.userChoice;
 
 
-      // Optionally, send analytics event with outcome of user choice
-      console.log(`User response to the install prompt: ${outcome}`);
+  //     // Optionally, send analytics event with outcome of user choice
+  //     console.log(`User response to the install prompt: ${outcome}`);
    
-      // We've used the prompt, and can't use it again, throw it away
-      deferredPrompt = null;
-    });
+  //     // We've used the prompt, and can't use it again, throw it away
+  //     deferredPrompt = null;
+  //   });
 
-    window.addEventListener('appinstalled', () => {
-      // Hide the app-provided install promotion
-      //hideInstallPromotion();
-      buttonInstall.style.display = 'none';
-      // Clear the deferredPrompt so it can be garbage collected
-      deferredPrompt = null;
-      // Optionally, send analytics event to indicate successful install
-      console.log('PWA was installed');
-    });
-  })
+  //   window.addEventListener('appinstalled', () => {
+  //     // Hide the app-provided install promotion
+  //     //hideInstallPromotion();
+  //     buttonInstall.style.display = 'none';
+  //     // Clear the deferredPrompt so it can be garbage collected
+  //     deferredPrompt = null;
+  //     // Optionally, send analytics event to indicate successful install
+  //     console.log('PWA was installed');
+  //   });
+  // }, [])
   return (
     <Layout>
       <RoutesTree/>
