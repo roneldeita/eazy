@@ -59,7 +59,7 @@ const App = () => {
   return (
     <Layout>
       <RoutesTree/>
-      <a id="modal-btn" className="waves-effect waves-light btn modal-trigger" href="#modal1">Open Modal</a>
+      <a id="modal-btn" style={{display:'none'}} className="waves-effect waves-light btn modal-trigger" href="#modal1">Open Modal</a>
       <Modal
       bottomSheet
       header='Intall App?'
