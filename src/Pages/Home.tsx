@@ -32,6 +32,7 @@ const Home: FC<Props> = (): ReactElement => {
     <>
       <h1>Home</h1>
       <button onClick={()=> HandleOnclick()}>Refer a friend</button>
+      <a href="tel: +6309750140558">Call +63 097 5014 0558</a>
     </>
   )
 }
